@@ -10,7 +10,8 @@ iframe{
 	width:100%;
 }
 #top{
-	background:url("../images/head_background_a.jpg");
+	background-color:beige;
+	/* background:url("../images/head_background_a.jpg"); */
 	height:150px;
 	overflow: hidden;
 	background-size: 6%;
