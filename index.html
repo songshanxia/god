@@ -4,95 +4,38 @@
 <meta charset="utf-8">
 <link rel="shortcut icon" type="image/x-icon" href="songshanxia_favicon.ico" media="screen"/>
 <title>何壮士的每日点滴</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<!-- <script type="text/javascript" src="jquery-3.1.0.min.js"/> -->
+<link rel="stylesheet" type="text/css" href="css/sketch.css"/>
 <style type="text/css">
-	#domain{
-		max-width:912px;
-		margin:auto;
-		width:100%;
-	}
-	#top{
-		background:url("head_background_a.jpg");
-		height:150px;
-		overflow: hidden;
-		background-size: 6%;
-	}
-	#menu_wrapper{
-		opacity:0.7;
-		/* background-color: gainsboro; */
-		background-color: azure;
-		margin-top: 106px;
-	}
-	#menu{
-		height:35px;
-		padding-left: 130px;
-	}
-	#menu .item{
-		font-size: 100%;
-		float:left;
-		margin-right: 40px;
-		font-family: 微软雅黑;
-		/* margin-top: 6px; */
-		height:35px;
-		color: darkgreen;
-		font-weight: bold;
-	}
-	#menu .item:hover{
-		cursor:pointer;
-		background-color:yellow;
-	}
-	#menu .item span{
-		    margin-top: 6px;
-			float: left;
-	}
-	#main{
-		 min-height: 800px;
-		background-color: ghostwhite;
-		margin-top: 20px;
-		font-family: 微软雅黑;
-	}
-	#main #day_of_detail{
-		margin-left: 60px;		
-		margin-right: 60px;
-		padding-top: 40px;
-	}
-	#main #day_of_detail .detail:hover{
-		cursor:pointer;
-		background-color:yellow;
-	}
-	#main #day_of_detail .detail{
-		height: 40px;
-	}
-	#main #day_of_detail .detail span{
-		margin-top:10px;
-	}
-	#main #day_of_detail .detail .title{
-		float:left;
-		margin-left:20px;
-	}
-	#main #day_of_detail .detail .date{
-		float:right;
-		margin-right:20px;
-	}
+	
 </style>
+<script type="text/javascript">
+	$(function(){
+		$("#menu .item").click(function(){
+			$("#menu .item").removeClass("current");
+			$(this).addClass("current");
+			$("#win").attr("src", $(this).attr("iurl"));
+		});
+	});
+</script>
 </head>
 <body>
 <div id="domain">
 	<div id="top">
 		<div id="menu_wrapper">
 			<div id=menu>
-				<div class="item"><span>每日点滴</span></div>
-				<div class="item"><span>海英的书房</span></div>
-				<div class="item"><span>每日新闻</span></div>
-				<div class="item"><span>读书会</span></div>
-				<div class="item"><span>近期持续关注</span></div>
-				<div class="item"><span>沙龙</span></div>
+				<div class="item current" iurl="everyday_detail.html"><span>每日点滴</span></div>
+				<div class="item" iurl="everyday_detail.html"><span>海英的书房</span></div>
+				<div class="item" iurl="everyday_detail.html"><span>每日新闻</span></div>
+				<div class="item" iurl=""><span>读书会</span></div>
+				<div class="item" iurl="everyday_detail.html"><span>近期持续关注</span></div>
+				<div class="item" iurl="everyday_detail.html"><span>沙龙</span></div>
 			</div>
 		</div>
 	</div>
 	<div id="main">
-		<div id="day_of_detail">
-			<div class="detail"><span class="title">高盛CEO：劳尔德•贝兰克梵 -- 催促壮士行动的一篇偶然演讲</span><span class="date">2016-08-30 00:04:50</span></div>
-		</div>
+		<iframe id="win" src="everyday_detail.html"/>
 	</div>
 	<div id="footer">
 	</div>
