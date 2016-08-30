@@ -1,7 +1,8 @@
 <DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
+<script type="text/javascript" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_f2fb5194.js"></script>
 <style type="text/css">
 	div{
 		font-family: 微软雅黑;
@@ -11,11 +12,13 @@
 		margin-right: 60px;
 		padding-top: 40px;
 	}
-	#day_of_detail .detail:hover{
+	#day_of_detail .detail:hover{		
 		cursor:pointer;
-		background-color:yellow;
 	}
-	#day_of_detail .detail{
+	#day_of_detail .detail{		
+		margin-bottom:20px;
+	}
+	#day_of_detail .detail .outline{
 		height: 40px;
 	}
 	#day_of_detail .detail span{
@@ -29,18 +32,40 @@
 		float:right;
 		margin-right:20px;
 	}
+	#day_of_detail .detail:nth-child(even) {background: #CCC}
+	#day_of_detail .detail:nth-child(odd) {background: #FFF}
+	#day_of_detail .detail .outline:hover{
+		background-color:yellow;
+	}
+	#day_of_detail .detail .more{
+		display:none;
+		margin-left: 40px;
+		margin-right: 40px;
+		padding-bottom: 10px;
+	}
+	#day_of_detail .detail .more_show{
+		display:block;
+	}
 </style>
 <script type="text/javascript">
 	$(function(){
 		$("#day_of_detail .detail").click(function(){
-			window.open($(this).attr("url"),  "_blank");
+			if($(this).attr("url")){
+				window.open($(this).attr("url"),  "_blank");
+			}else if($(this).hasClass("app")){
+				$(this).find(".more").toggleClass("more_show");
+				console.log($(this).find(".more"));
+			}
 		});
 	});
 </script>
 </head>
 <body>
 <div id="day_of_detail">
-			<div class="detail" url="http://www.wtoutiao.com/p/fb01Jz.html"><span class="title">高盛CEO：劳尔德•贝兰克梵 -- 催促壮士行动的一篇偶然演讲</span><span class="date">2016-08-30 00:04:50</span></div>
+			<div class="detail" url="http://www.wtoutiao.com/p/fb01Jz.html"><div class="outline"><span class="title">高盛CEO：劳尔德•贝兰克梵 -- 催促壮士行动的一篇偶然演讲</span><span class="date">2016-08-30 00:04:50</span></div></div>
+			<div class="detail app" ><div class="outline"><span class="title">高盛CEO：劳尔德•贝兰克梵 -- 真的是多面人生</span><span class="date">2016-08-30 23:51:50</span></div>
+				<div class="more"><p>一开始读了上面的他的演讲，以为他是一个勤勤勉勉的人，没想到，就像他自己说的，人有无限可能，人可以是很多面的</p></div>
+			</div>
 		</div>
 </body>
 </html>
