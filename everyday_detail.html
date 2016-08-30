@@ -1,3 +1,7 @@
+<DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <style type="text/css">
 	div{
 		font-family: 微软雅黑;
@@ -26,6 +30,17 @@
 		margin-right:20px;
 	}
 </style>
+<script type="text/javascript">
+	$(function(){
+		$("#day_of_detail .detail").click(function(){
+			window.open($(this).attr("url"),  "_blank");
+		});
+	});
+</script>
+</head>
+<body>
 <div id="day_of_detail">
-			<div class="detail"><span class="title">高盛CEO：劳尔德•贝兰克梵 -- 催促壮士行动的一篇偶然演讲</span><span class="date">2016-08-30 00:04:50</span></div>
+			<div class="detail" url="http://www.wtoutiao.com/p/fb01Jz.html"><span class="title">高盛CEO：劳尔德•贝兰克梵 -- 催促壮士行动的一篇偶然演讲</span><span class="date">2016-08-30 00:04:50</span></div>
 		</div>
+</body>
+</html>
